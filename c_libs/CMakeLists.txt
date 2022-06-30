@@ -18,7 +18,7 @@ project(c_libs)
 
 # Set the compiler, for some reason this does not work with clang++ or g++
 set(CMAKE_CXX_COMPILER "/usr/bin/c++")
-
+set(CMAKE_CC_COMPILER "usr/bin/gcc")
 set(CMAKE_C_STANDARD 99)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_C_STANDARD_REQUIRED ON)
