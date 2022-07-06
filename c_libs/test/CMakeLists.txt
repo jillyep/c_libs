@@ -11,13 +11,13 @@
 # ================================================================================
 # ================================================================================
 # Set minimum cmake version
-cmake_minimum_required(VERSION 3.22.2)
+cmake_minimum_required(VERSION 3.22.1)
 
 enable_testing()
 
 add_executable(
   unit_tests
-  test.cpp
+  test_vector.cpp
 )
 target_link_libraries(
   unit_tests

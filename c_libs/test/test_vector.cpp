@@ -16,14 +16,17 @@
 #include <gtest/gtest.h>
 
 extern "C" {
-#include "test_file.h"
+#include "vector.h"
 }
 
-TEST(test_suite_name, test_name) {
-	// Expect two strings not to be equal.
-	EXPECT_STRNE("hello", "world");
-	// Expect equality.
-	EXPECT_EQ(7 * 6, 42);
+TEST(init_vector, test_one) {
+	size_t size = sizeof(int);
+	size_t length = 5;
+	Vector vec = init_vector(size, length);
+	EXPECT_EQ(vec.num_bytes, size);
+	EXPECT_EQ(vec.num_indices_allocated, length);
+	EXPECT_EQ(vec.active_length, 0);
+	free(vec.vector);
 }
 // ================================================================================
 // ================================================================================

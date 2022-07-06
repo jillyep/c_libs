@@ -13,7 +13,7 @@
 # Set generic terms
 
 # CMake version
-cmake_minimum_required(VERSION 3.22.2)
+cmake_minimum_required(VERSION 3.22.1)
 project(c_libs)
 
 # Set the compiler, for some reason this does not work with clang++ or g++

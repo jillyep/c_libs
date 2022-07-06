@@ -17,7 +17,7 @@
 #define vector_H
 
 #include <stdio.h>
-
+#include <stdlib.h>
 /**
  *  An enum container with variables describing relevant data types
  *
@@ -46,9 +46,20 @@ typedef enum
 	LONGLONG,
 	NONE
 }	dtype;
+//-------------------------------------------------------------------------------- 
 
-int func(); // Replace with correct prototype
+typedef struct
+{
+	size_t num_indices_allocated;
+	size_t active_length;
+	size_t num_bytes;
+	dtype dat_type;
+	void *vector;
+} Vector;
+//-------------------------------------------------------------------------------- 
 
+
+Vector init_vector(size_t num_bytes, size_t num_indices);
 #endif /* vector_H */
 // ================================================================================
 // ================================================================================
