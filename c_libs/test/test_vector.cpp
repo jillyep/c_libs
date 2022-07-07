@@ -18,6 +18,10 @@
 extern "C" {
 #include "vector.h"
 }
+// -------------------------------------------------------------------------------- 
+/* This function will test the init_vector to see if it correctly
+ * allocates memory for a user defined dynamic array.
+*/
 
 TEST(init_vector, test_one) {
 	size_t size = sizeof(int);
@@ -31,6 +35,9 @@ TEST(init_vector, test_one) {
 
 // -------------------------------------------------------------------------------- 
 
+/* This function will test the init_type_vector to see if it correctly
+ * allocates memory for a user defined dynamic array.
+*/
 
 TEST(test_initialize_vector, type_vec) {
 	size_t length = 5;
