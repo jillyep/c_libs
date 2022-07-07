@@ -1,0 +1,139 @@
+\hypertarget{vector_8h}{}\doxysection{/home/jillbobaggins/\+Code\+\_\+\+Dev/\+C/c\+\_\+libs/c\+\_\+libs/include/vector.h File Reference}
+\label{vector_8h}\index{/home/jillbobaggins/Code\_Dev/C/c\_libs/c\_libs/include/vector.h@{/home/jillbobaggins/Code\_Dev/C/c\_libs/c\_libs/include/vector.h}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+Include dependency graph for vector.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structVector}{Vector}}
+\begin{DoxyCompactList}\small\item\em A Container for the dynamically allocated array and related metadata. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{vector_8h_acfe99d230e216901bd782cc580e4e815}{dtype}} \{ \newline
+\mbox{\hyperlink{vector_8h_acfe99d230e216901bd782cc580e4e815a9cf4a0866224b0bb4a7a895da27c9c4c}{FLOAT}}
+, \mbox{\hyperlink{vector_8h_acfe99d230e216901bd782cc580e4e815a33465d1d419b1074fb259ef444609e92}{DOUBLE}}
+, \mbox{\hyperlink{vector_8h_acfe99d230e216901bd782cc580e4e815a4618cf21306b3c647741afa7ebefcab8}{CHAR}}
+, \mbox{\hyperlink{vector_8h_acfe99d230e216901bd782cc580e4e815afd5a5f51ce25953f3db2c7e93eb7864a}{INT}}
+, \newline
+\mbox{\hyperlink{vector_8h_acfe99d230e216901bd782cc580e4e815aee847e634a4297b274316de8a8ca9921}{STRING}}
+, \mbox{\hyperlink{vector_8h_acfe99d230e216901bd782cc580e4e815a205f14321a3265e1981e0ee184c71187}{SHORTINT}}
+, \mbox{\hyperlink{vector_8h_acfe99d230e216901bd782cc580e4e815aaee055c4a5aba7d55774e4f1c01dacea}{LONG}}
+, \mbox{\hyperlink{vector_8h_acfe99d230e216901bd782cc580e4e815a6f20a0296b153acb8046f73b274794df}{LONGLONG}}
+, \newline
+\mbox{\hyperlink{vector_8h_acfe99d230e216901bd782cc580e4e815ac157bdf0b85a40d2619cbc8bc1ae5fe2}{NONE}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structVector}{Vector}} \mbox{\hyperlink{vector_8h_affc9eba1b68ea79daa1f0b67cd4387b9}{init\+\_\+vector}} (size\+\_\+t num\+\_\+bytes, size\+\_\+t num\+\_\+indices)
+\item 
+\mbox{\hyperlink{structVector}{Vector}} \mbox{\hyperlink{vector_8h_aebfff769c9c952425c106d67726fdae8}{init\+\_\+type\+\_\+vector}} (\mbox{\hyperlink{vector_8h_acfe99d230e216901bd782cc580e4e815}{dtype}} dat\+\_\+type, size\+\_\+t num\+\_\+indices)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{vector_8h_acfe99d230e216901bd782cc580e4e815}\label{vector_8h_acfe99d230e216901bd782cc580e4e815}} 
+\index{vector.h@{vector.h}!dtype@{dtype}}
+\index{dtype@{dtype}!vector.h@{vector.h}}
+\doxysubsubsection{\texorpdfstring{dtype}{dtype}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{vector_8h_acfe99d230e216901bd782cc580e4e815}{dtype}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FLOAT@{FLOAT}!vector.h@{vector.h}}\index{vector.h@{vector.h}!FLOAT@{FLOAT}}}\mbox{\Hypertarget{vector_8h_acfe99d230e216901bd782cc580e4e815a9cf4a0866224b0bb4a7a895da27c9c4c}\label{vector_8h_acfe99d230e216901bd782cc580e4e815a9cf4a0866224b0bb4a7a895da27c9c4c}} 
+FLOAT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DOUBLE@{DOUBLE}!vector.h@{vector.h}}\index{vector.h@{vector.h}!DOUBLE@{DOUBLE}}}\mbox{\Hypertarget{vector_8h_acfe99d230e216901bd782cc580e4e815a33465d1d419b1074fb259ef444609e92}\label{vector_8h_acfe99d230e216901bd782cc580e4e815a33465d1d419b1074fb259ef444609e92}} 
+DOUBLE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CHAR@{CHAR}!vector.h@{vector.h}}\index{vector.h@{vector.h}!CHAR@{CHAR}}}\mbox{\Hypertarget{vector_8h_acfe99d230e216901bd782cc580e4e815a4618cf21306b3c647741afa7ebefcab8}\label{vector_8h_acfe99d230e216901bd782cc580e4e815a4618cf21306b3c647741afa7ebefcab8}} 
+CHAR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INT@{INT}!vector.h@{vector.h}}\index{vector.h@{vector.h}!INT@{INT}}}\mbox{\Hypertarget{vector_8h_acfe99d230e216901bd782cc580e4e815afd5a5f51ce25953f3db2c7e93eb7864a}\label{vector_8h_acfe99d230e216901bd782cc580e4e815afd5a5f51ce25953f3db2c7e93eb7864a}} 
+INT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STRING@{STRING}!vector.h@{vector.h}}\index{vector.h@{vector.h}!STRING@{STRING}}}\mbox{\Hypertarget{vector_8h_acfe99d230e216901bd782cc580e4e815aee847e634a4297b274316de8a8ca9921}\label{vector_8h_acfe99d230e216901bd782cc580e4e815aee847e634a4297b274316de8a8ca9921}} 
+STRING&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SHORTINT@{SHORTINT}!vector.h@{vector.h}}\index{vector.h@{vector.h}!SHORTINT@{SHORTINT}}}\mbox{\Hypertarget{vector_8h_acfe99d230e216901bd782cc580e4e815a205f14321a3265e1981e0ee184c71187}\label{vector_8h_acfe99d230e216901bd782cc580e4e815a205f14321a3265e1981e0ee184c71187}} 
+SHORTINT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LONG@{LONG}!vector.h@{vector.h}}\index{vector.h@{vector.h}!LONG@{LONG}}}\mbox{\Hypertarget{vector_8h_acfe99d230e216901bd782cc580e4e815aaee055c4a5aba7d55774e4f1c01dacea}\label{vector_8h_acfe99d230e216901bd782cc580e4e815aaee055c4a5aba7d55774e4f1c01dacea}} 
+LONG&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LONGLONG@{LONGLONG}!vector.h@{vector.h}}\index{vector.h@{vector.h}!LONGLONG@{LONGLONG}}}\mbox{\Hypertarget{vector_8h_acfe99d230e216901bd782cc580e4e815a6f20a0296b153acb8046f73b274794df}\label{vector_8h_acfe99d230e216901bd782cc580e4e815a6f20a0296b153acb8046f73b274794df}} 
+LONGLONG&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NONE@{NONE}!vector.h@{vector.h}}\index{vector.h@{vector.h}!NONE@{NONE}}}\mbox{\Hypertarget{vector_8h_acfe99d230e216901bd782cc580e4e815ac157bdf0b85a40d2619cbc8bc1ae5fe2}\label{vector_8h_acfe99d230e216901bd782cc580e4e815ac157bdf0b85a40d2619cbc8bc1ae5fe2}} 
+NONE&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{vector_8h_aebfff769c9c952425c106d67726fdae8}\label{vector_8h_aebfff769c9c952425c106d67726fdae8}} 
+\index{vector.h@{vector.h}!init\_type\_vector@{init\_type\_vector}}
+\index{init\_type\_vector@{init\_type\_vector}!vector.h@{vector.h}}
+\doxysubsubsection{\texorpdfstring{init\_type\_vector()}{init\_type\_vector()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structVector}{Vector}} init\+\_\+type\+\_\+vector (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{vector_8h_acfe99d230e216901bd782cc580e4e815}{dtype}}}]{dat\+\_\+type,  }\item[{size\+\_\+t}]{num\+\_\+indices }\end{DoxyParamCaption})}
+
+Instantiates a \mbox{\hyperlink{structVector}{Vector}} container where the user can pass to the function an enum value representing the data type.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dat\+\_\+type} & An enum data type \\
+\hline
+{\em num\+\_\+indices} & The user guess for the initial number of allocated indices \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+vec A \mbox{\hyperlink{structVector}{Vector}} container
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{// Create a dynamically allocated array container for integers, with allocated}}
+\DoxyCodeLine{\textcolor{comment}{// memory for 5 indices}}
+\DoxyCodeLine{\mbox{\hyperlink{structVector}{Vector}} vec = \mbox{\hyperlink{vector_8c_aebfff769c9c952425c106d67726fdae8}{init\_type\_vector}}(\mbox{\hyperlink{vector_8h_acfe99d230e216901bd782cc580e4e815afd5a5f51ce25953f3db2c7e93eb7864a}{INT}}, 5)}
+
+\end{DoxyCode}
+ \mbox{\Hypertarget{vector_8h_affc9eba1b68ea79daa1f0b67cd4387b9}\label{vector_8h_affc9eba1b68ea79daa1f0b67cd4387b9}} 
+\index{vector.h@{vector.h}!init\_vector@{init\_vector}}
+\index{init\_vector@{init\_vector}!vector.h@{vector.h}}
+\doxysubsubsection{\texorpdfstring{init\_vector()}{init\_vector()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structVector}{Vector}} init\+\_\+vector (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{num\+\_\+bytes,  }\item[{size\+\_\+t}]{num\+\_\+indices }\end{DoxyParamCaption})}
+
+Instantiates a \mbox{\hyperlink{structVector}{Vector}} container where the user can determine the number of bytes allocated to each vector indice. This function allocates the vector in heap memory.
+
+
+\begin{DoxyParams}{Parameters}
+{\em num\+\_\+bytes} & The number of bytes consumed by each index in the array \\
+\hline
+{\em num\+\_\+indices} & The users guess for the total number of required indices in the vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+vec A \mbox{\hyperlink{structVector}{Vector}} container
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{// -\/ Create a dynamically allocated array container for integers, with allocated}}
+\DoxyCodeLine{\textcolor{comment}{// memory for 5 indices.}}
+\DoxyCodeLine{\mbox{\hyperlink{structVector}{Vector}} vec = \mbox{\hyperlink{vector_8c_affc9eba1b68ea79daa1f0b67cd4387b9}{init\_vector}}(\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}), 5);}
+
+\end{DoxyCode}
+ 

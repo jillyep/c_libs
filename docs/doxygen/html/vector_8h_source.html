@@ -69,7 +69,7 @@ $(function() {
 <div class="title">vector.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// ================================================================================</span></div>
+<a href="vector_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// ================================================================================</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">// ================================================================================</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">// - File:    vector.h</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">// - Purpose: This file contains the prototype, structures, and enums used</span></div>
@@ -88,26 +88,62 @@ $(function() {
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#define vector_H</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;{</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    FLOAT,</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    DOUBLE,</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    CHAR,</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    INT,</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    STRING,</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    SHORTINT,</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    LONG,</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    LONGLONG,</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    NONE</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;}   dtype;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keywordtype">int</span> func(); <span class="comment">// Replace with correct prototype</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* vector_H */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">// ================================================================================</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">// ================================================================================</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">// eof</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &lt;string.h&gt;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="vector_8h.html#acfe99d230e216901bd782cc580e4e815">   23</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;{</div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="vector_8h.html#acfe99d230e216901bd782cc580e4e815a9cf4a0866224b0bb4a7a895da27c9c4c">   25</a></span>&#160;    <a class="code" href="vector_8h.html#acfe99d230e216901bd782cc580e4e815a9cf4a0866224b0bb4a7a895da27c9c4c">FLOAT</a>,</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="vector_8h.html#acfe99d230e216901bd782cc580e4e815a33465d1d419b1074fb259ef444609e92">   26</a></span>&#160;    <a class="code" href="vector_8h.html#acfe99d230e216901bd782cc580e4e815a33465d1d419b1074fb259ef444609e92">DOUBLE</a>,</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="vector_8h.html#acfe99d230e216901bd782cc580e4e815a4618cf21306b3c647741afa7ebefcab8">   27</a></span>&#160;    <a class="code" href="vector_8h.html#acfe99d230e216901bd782cc580e4e815a4618cf21306b3c647741afa7ebefcab8">CHAR</a>,</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="vector_8h.html#acfe99d230e216901bd782cc580e4e815afd5a5f51ce25953f3db2c7e93eb7864a">   28</a></span>&#160;    <a class="code" href="vector_8h.html#acfe99d230e216901bd782cc580e4e815afd5a5f51ce25953f3db2c7e93eb7864a">INT</a>,</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="vector_8h.html#acfe99d230e216901bd782cc580e4e815aee847e634a4297b274316de8a8ca9921">   29</a></span>&#160;    <a class="code" href="vector_8h.html#acfe99d230e216901bd782cc580e4e815aee847e634a4297b274316de8a8ca9921">STRING</a>,</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="vector_8h.html#acfe99d230e216901bd782cc580e4e815a205f14321a3265e1981e0ee184c71187">   30</a></span>&#160;    <a class="code" href="vector_8h.html#acfe99d230e216901bd782cc580e4e815a205f14321a3265e1981e0ee184c71187">SHORTINT</a>,</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="vector_8h.html#acfe99d230e216901bd782cc580e4e815aaee055c4a5aba7d55774e4f1c01dacea">   31</a></span>&#160;    <a class="code" href="vector_8h.html#acfe99d230e216901bd782cc580e4e815aaee055c4a5aba7d55774e4f1c01dacea">LONG</a>,</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="vector_8h.html#acfe99d230e216901bd782cc580e4e815a6f20a0296b153acb8046f73b274794df">   32</a></span>&#160;    <a class="code" href="vector_8h.html#acfe99d230e216901bd782cc580e4e815a6f20a0296b153acb8046f73b274794df">LONGLONG</a>,</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <a class="code" href="vector_8h.html#acfe99d230e216901bd782cc580e4e815ac157bdf0b85a40d2619cbc8bc1ae5fe2">NONE</a></div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="vector_8h.html#acfe99d230e216901bd782cc580e4e815ac157bdf0b85a40d2619cbc8bc1ae5fe2">   34</a></span>&#160;}   <a class="code" href="vector_8h.html#acfe99d230e216901bd782cc580e4e815">dtype</a>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">//--------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="structVector.html">   54</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;{</div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="structVector.html#ac834f2defeda756435e1d60b69122a42">   56</a></span>&#160;    <span class="keywordtype">void</span> *<a class="code" href="structVector.html#ac834f2defeda756435e1d60b69122a42">vector</a>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="structVector.html#ab7bc85dcb16ebc2e4879b74a30167533">   57</a></span>&#160;    <span class="keywordtype">size_t</span> <a class="code" href="structVector.html#ab7bc85dcb16ebc2e4879b74a30167533">active_length</a>;</div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="structVector.html#ab907c9fd798246105a8c54a80697f91a">   58</a></span>&#160;    <span class="keywordtype">size_t</span> <a class="code" href="structVector.html#ab907c9fd798246105a8c54a80697f91a">allocated_length</a>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="structVector.html#aca2e44fd5525a105e7dc19f39408b0f3">   59</a></span>&#160;    <span class="keywordtype">size_t</span> <a class="code" href="structVector.html#aca2e44fd5525a105e7dc19f39408b0f3">num_bytes</a>;</div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="structVector.html#abbb604532e7f41a38e0f73fe4815d687">   60</a></span>&#160;    <a class="code" href="vector_8h.html#acfe99d230e216901bd782cc580e4e815">dtype</a> <a class="code" href="structVector.html#abbb604532e7f41a38e0f73fe4815d687">dat_type</a>;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;} <a class="code" href="structVector.html">Vector</a>;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment">//--------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<a class="code" href="structVector.html">Vector</a> <a class="code" href="vector_8h.html#affc9eba1b68ea79daa1f0b67cd4387b9">init_vector</a>(<span class="keywordtype">size_t</span> num_bytes, <span class="keywordtype">size_t</span> num_indices);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="comment">//--------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<a class="code" href="structVector.html">Vector</a> <a class="code" href="vector_8h.html#aebfff769c9c952425c106d67726fdae8">init_type_vector</a>(<a class="code" href="vector_8h.html#acfe99d230e216901bd782cc580e4e815">dtype</a> dat_type, <span class="keywordtype">size_t</span> num_indices);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* vector_H */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="comment">// ================================================================================</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="comment">// ================================================================================</span></div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="comment">// eof</span></div>
+<div class="ttc" id="astructVector_html"><div class="ttname"><a href="structVector.html">Vector</a></div><div class="ttdoc">A Container for the dynamically allocated array and related metadata.</div><div class="ttdef"><b>Definition:</b> vector.h:55</div></div>
+<div class="ttc" id="astructVector_html_ab7bc85dcb16ebc2e4879b74a30167533"><div class="ttname"><a href="structVector.html#ab7bc85dcb16ebc2e4879b74a30167533">Vector::active_length</a></div><div class="ttdeci">size_t active_length</div><div class="ttdef"><b>Definition:</b> vector.h:57</div></div>
+<div class="ttc" id="astructVector_html_ab907c9fd798246105a8c54a80697f91a"><div class="ttname"><a href="structVector.html#ab907c9fd798246105a8c54a80697f91a">Vector::allocated_length</a></div><div class="ttdeci">size_t allocated_length</div><div class="ttdef"><b>Definition:</b> vector.h:58</div></div>
+<div class="ttc" id="astructVector_html_abbb604532e7f41a38e0f73fe4815d687"><div class="ttname"><a href="structVector.html#abbb604532e7f41a38e0f73fe4815d687">Vector::dat_type</a></div><div class="ttdeci">dtype dat_type</div><div class="ttdef"><b>Definition:</b> vector.h:60</div></div>
+<div class="ttc" id="astructVector_html_ac834f2defeda756435e1d60b69122a42"><div class="ttname"><a href="structVector.html#ac834f2defeda756435e1d60b69122a42">Vector::vector</a></div><div class="ttdeci">void * vector</div><div class="ttdef"><b>Definition:</b> vector.h:56</div></div>
+<div class="ttc" id="astructVector_html_aca2e44fd5525a105e7dc19f39408b0f3"><div class="ttname"><a href="structVector.html#aca2e44fd5525a105e7dc19f39408b0f3">Vector::num_bytes</a></div><div class="ttdeci">size_t num_bytes</div><div class="ttdef"><b>Definition:</b> vector.h:59</div></div>
+<div class="ttc" id="avector_8h_html_acfe99d230e216901bd782cc580e4e815"><div class="ttname"><a href="vector_8h.html#acfe99d230e216901bd782cc580e4e815">dtype</a></div><div class="ttdeci">dtype</div><div class="ttdef"><b>Definition:</b> vector.h:24</div></div>
+<div class="ttc" id="avector_8h_html_acfe99d230e216901bd782cc580e4e815a205f14321a3265e1981e0ee184c71187"><div class="ttname"><a href="vector_8h.html#acfe99d230e216901bd782cc580e4e815a205f14321a3265e1981e0ee184c71187">SHORTINT</a></div><div class="ttdeci">@ SHORTINT</div><div class="ttdef"><b>Definition:</b> vector.h:30</div></div>
+<div class="ttc" id="avector_8h_html_acfe99d230e216901bd782cc580e4e815a33465d1d419b1074fb259ef444609e92"><div class="ttname"><a href="vector_8h.html#acfe99d230e216901bd782cc580e4e815a33465d1d419b1074fb259ef444609e92">DOUBLE</a></div><div class="ttdeci">@ DOUBLE</div><div class="ttdef"><b>Definition:</b> vector.h:26</div></div>
+<div class="ttc" id="avector_8h_html_acfe99d230e216901bd782cc580e4e815a4618cf21306b3c647741afa7ebefcab8"><div class="ttname"><a href="vector_8h.html#acfe99d230e216901bd782cc580e4e815a4618cf21306b3c647741afa7ebefcab8">CHAR</a></div><div class="ttdeci">@ CHAR</div><div class="ttdef"><b>Definition:</b> vector.h:27</div></div>
+<div class="ttc" id="avector_8h_html_acfe99d230e216901bd782cc580e4e815a6f20a0296b153acb8046f73b274794df"><div class="ttname"><a href="vector_8h.html#acfe99d230e216901bd782cc580e4e815a6f20a0296b153acb8046f73b274794df">LONGLONG</a></div><div class="ttdeci">@ LONGLONG</div><div class="ttdef"><b>Definition:</b> vector.h:32</div></div>
+<div class="ttc" id="avector_8h_html_acfe99d230e216901bd782cc580e4e815a9cf4a0866224b0bb4a7a895da27c9c4c"><div class="ttname"><a href="vector_8h.html#acfe99d230e216901bd782cc580e4e815a9cf4a0866224b0bb4a7a895da27c9c4c">FLOAT</a></div><div class="ttdeci">@ FLOAT</div><div class="ttdef"><b>Definition:</b> vector.h:25</div></div>
+<div class="ttc" id="avector_8h_html_acfe99d230e216901bd782cc580e4e815aaee055c4a5aba7d55774e4f1c01dacea"><div class="ttname"><a href="vector_8h.html#acfe99d230e216901bd782cc580e4e815aaee055c4a5aba7d55774e4f1c01dacea">LONG</a></div><div class="ttdeci">@ LONG</div><div class="ttdef"><b>Definition:</b> vector.h:31</div></div>
+<div class="ttc" id="avector_8h_html_acfe99d230e216901bd782cc580e4e815ac157bdf0b85a40d2619cbc8bc1ae5fe2"><div class="ttname"><a href="vector_8h.html#acfe99d230e216901bd782cc580e4e815ac157bdf0b85a40d2619cbc8bc1ae5fe2">NONE</a></div><div class="ttdeci">@ NONE</div><div class="ttdef"><b>Definition:</b> vector.h:33</div></div>
+<div class="ttc" id="avector_8h_html_acfe99d230e216901bd782cc580e4e815aee847e634a4297b274316de8a8ca9921"><div class="ttname"><a href="vector_8h.html#acfe99d230e216901bd782cc580e4e815aee847e634a4297b274316de8a8ca9921">STRING</a></div><div class="ttdeci">@ STRING</div><div class="ttdef"><b>Definition:</b> vector.h:29</div></div>
+<div class="ttc" id="avector_8h_html_acfe99d230e216901bd782cc580e4e815afd5a5f51ce25953f3db2c7e93eb7864a"><div class="ttname"><a href="vector_8h.html#acfe99d230e216901bd782cc580e4e815afd5a5f51ce25953f3db2c7e93eb7864a">INT</a></div><div class="ttdeci">@ INT</div><div class="ttdef"><b>Definition:</b> vector.h:28</div></div>
+<div class="ttc" id="avector_8h_html_aebfff769c9c952425c106d67726fdae8"><div class="ttname"><a href="vector_8h.html#aebfff769c9c952425c106d67726fdae8">init_type_vector</a></div><div class="ttdeci">Vector init_type_vector(dtype dat_type, size_t num_indices)</div><div class="ttdef"><b>Definition:</b> vector.c:42</div></div>
+<div class="ttc" id="avector_8h_html_affc9eba1b68ea79daa1f0b67cd4387b9"><div class="ttname"><a href="vector_8h.html#affc9eba1b68ea79daa1f0b67cd4387b9">init_vector</a></div><div class="ttdeci">Vector init_vector(size_t num_bytes, size_t num_indices)</div><div class="ttdef"><b>Definition:</b> vector.c:17</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
