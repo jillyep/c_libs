@@ -32,7 +32,7 @@ Vector init_vector(size_t num_bytes, size_t num_indices) {
 	vec.dat_type = NONE;
 	vec.active_length = 0;
 	vec.num_bytes = num_bytes;
-	vec.num_indices_allocated = num_indices;
+	vec.allocated_length = num_indices;
 	vec.vector = pointer;
 	return vec;
 }
@@ -63,7 +63,7 @@ Vector init_type_vector(dtype dat_type, size_t num_indices) {
 	vec.dat_type = dat_type;
 	vec.active_length = 0;
 	vec.num_bytes = num_bytes;
-	vec.num_indices_allocated = num_indices;
+	vec.allocated_length = num_indices;
 	vec.vector = pointer;
 	return vec;
 }
