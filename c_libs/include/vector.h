@@ -18,6 +18,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 /**
  *  An enum container with variables describing relevant data types
  *
@@ -60,6 +61,12 @@ typedef struct
 
 
 Vector init_vector(size_t num_bytes, size_t num_indices);
+
+//-------------------------------------------------------------------------------- 
+
+Vector init_type_vector(dtype dat_type, size_t num_indices);
+
+
 #endif /* vector_H */
 // ================================================================================
 // ================================================================================

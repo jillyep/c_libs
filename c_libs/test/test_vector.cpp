@@ -28,6 +28,18 @@ TEST(init_vector, test_one) {
 	EXPECT_EQ(vec.active_length, 0);
 	free(vec.vector);
 }
+
+// -------------------------------------------------------------------------------- 
+
+
+TEST(test_initialize_vector, type_vec) {
+	size_t length = 5;
+	Vector vec = init_type_vector(INT, length);
+	EXPECT_EQ(vec.num_bytes, sizeof(int));
+	EXPECT_EQ(vec.num_indices_allocated, length);
+	EXPECT_EQ(vec.active_length, 0);
+	free(vec.vector);
+}
 // ================================================================================
 // ================================================================================
 // eof
