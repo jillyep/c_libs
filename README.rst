@@ -61,13 +61,13 @@ not just a vector.
    Vector double_vec = init_vector(8, 20);
 
 However, it is better to use the ``init_type_vector(dtype data_type, size_t num_indices)`` function
- where the user passes an enum value to represent the ``data_type``. The enum types can be ``INT``,
- ``FLOAT``, ``DOUBLE``, ``CHAR``, ``STRING``, ``SHORTINT``, ``LONG``, ``LONGLONG``, and ``NONE``. 
- The enum types guide the software to automatically determine the number of bytes consumed by a
- single vector indice, and does not care about signed vs. unsigned data types. The ``NONE`` 
- data type is automatically used for the ``init_type_vector`` function. The user can use it for the
- ``init_type_vector`` function; however, it will be degraded to an ``INT`` data type. The code example
- below demonstrates the instantiation of an integer and double vector with the ``init_type_vector`` function.
+where the user passes an enum value to represent the ``data_type``. The enum types can be ``INT``,
+``FLOAT``, ``DOUBLE``, ``CHAR``, ``STRING``, ``SHORTINT``, ``LONG``, ``LONGLONG``, and ``NONE``. 
+The enum types guide the software to automatically determine the number of bytes consumed by a
+single vector indice, and does not care about signed vs. unsigned data types. The ``NONE`` 
+data type is automatically used for the ``init_type_vector`` function. The user can use it for the
+``init_type_vector`` function; however, it will be degraded to an ``INT`` data type. The code example
+below demonstrates the instantiation of an integer and double vector with the ``init_type_vector`` function.
 
 .. code-block:: c
 
@@ -76,4 +76,34 @@ However, it is better to use the ``init_type_vector(dtype data_type, size_t num_
 
    //Double vector
    Vector double_vec = init_type_vector(8, 20);
+
+
+***********
+push_vector
+***********
+This function pushes an array or scalar to a vector. The vector must first be instantiated via
+the ``init_vector`` or ``init_type_vector`` functions. The user passes the the pointer to the instantiated vector,
+the pointer to an array or scalar value to be pushed to the vector, and the size of the elements to be pushed 
+to the vector. The function supports pushing data types as specified in the enum. The enum types can be ``INT``,
+``FLOAT``, ``DOUBLE``, ``CHAR``, ``STRING``, ``SHORTINT``, ``LONG``, ``LONGLONG``, and ``NONE``. 
+The enum types guide the software to automatically determine the number of bytes consumed by a
+single vector indice, and does not care about signed vs. unsigned data types. The ``NONE`` 
+data type is automatically used for the ``init_type_vector`` function. 
+
+.. code-block:: c
+
+    // Instantiating a vector
+    Vector vec = init_type_vector(INT, 10);
+
+    //Pushing scalar value to the vector
+    int a = 1;
+    length = 1;
+    push(&vec, &a, length);
+
+    // Pushing array of integers to the vector
+    int b[] = {4, 5, 6};
+    length = 3;
+    push(&vec, &b, length);
+
+
 

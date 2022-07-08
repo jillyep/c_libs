@@ -101,7 +101,7 @@ Vector init_vector(size_t num_bytes, size_t num_indices);
  * an enum value representing the data type.
  *
  * @param dat_type An enum data type
- * @param num_indices The user guess for the initial number of allocated
+ * @param numi_indices The user guess for the initial number of allocated
  *                    indices
  * @return vec A Vector container
  *
@@ -115,6 +115,30 @@ Vector init_type_vector(dtype dat_type, size_t num_indices);
 
 //--------------------------------------------------------------------------------
 
+
+/**
+ * Pushes array or scalar data to a Vector. User must first instantiate a vector
+ * using the init_vector or init_type_vector functions. Then they can push data by inputting the  pointer to the instantiated vector, a pointer to the array or scalar to be pushed to the vector, and the number of indices of the array or scalar to be pushed to the vector. 
+ *
+ * @param *vec a pointer to the vector that was previously instantiated using the 
+ * init_type_vector or init_vector functions.
+ * @param *elements array or scalar values to be pushed to the vector
+ * @param num_indices the number of indices contained in elements
+ *
+ * @return 1
+ *
+ * @code
+ * a[] = {1, 2, 3};
+ * length = 3;
+ * // Instantiate a vector
+ * Vector vec = init_type_vector(INT, 5);
+ * // push array a onto vec
+ * push_vector(&vec, &a, length);
+ * for (size_t i = 0; i < vec.active_length; i++){
+ *		printf("%ld\n", ((int *) vec.vector)[i]);
+ *		}
+ * @endcode
+ */
 int push_vector(Vector *vec, void *elements, size_t num_indices);
 
 #endif /* vector_H */

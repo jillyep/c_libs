@@ -58,6 +58,7 @@ TEST(test_push_vector, push_array) {
 	int a[] = {1, 2, 3};
 	int length = 3;
 	Vector vec = init_type_vector(INT, length);
+	push_vector(&vec, &a, length);
 	for (size_t i = 0; i < vec.active_length; i++){
 		EXPECT_EQ(a[i], ((int *) vec.vector)[i]);
 	}
