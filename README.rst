@@ -97,13 +97,13 @@ data type is automatically used for the ``init_type_vector`` function.
 
     //Pushing scalar value to the vector
     int a = 1;
-    length = 1;
-    push(&vec, &a, length);
+    scalar_length = 1;
+    push(&vec, &a, scalar_length);
 
     // Pushing array of integers to the vector
     int b[] = {4, 5, 6};
-    length = 3;
-    push(&vec, &b, length);
+    array_length = 3;
+    push(&vec, &b, array_length);
 
 
 
