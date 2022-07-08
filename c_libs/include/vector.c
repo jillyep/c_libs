@@ -68,7 +68,45 @@ Vector init_type_vector(dtype dat_type, size_t num_indices) {
 	return vec;
 }
 
+// -------------------------------------------------------------------------------- 
 
+// Prototype
+// Write function in .c file
+// Write test
+// Run test
+// doc strings
+// update readme.rst
+// add to git
+
+
+int push_vector(Vector *vec, void *elements, size_t num_indices){
+//1. active length + num_indices, compare to allocated length
+//2. if  active > allocated, realloc memory active length * 2
+//3. see if vector exceeds memory available (NULL)
+//4. assign extra memory to vec.vector
+//5. memcopy the new elements into the vector
+//6. Update meta data. allocated memory, active length += num_indices,
+	size_t dat_size = vec->active_length + num_indices;
+	size_t new_size = vec->active_length * 2;
+	if (vec->allocated_length < dat_size){
+		void *ptr = realloc(vec->vector, new_size * vec->num_bytes);
+		if (ptr == NULL){
+			printf("Exceeded memory available. Exiting program.\n");
+			return 0;
+		}
+		vec->allocated_length = new_size;
+		vec->vector = ptr;
+	}
+	memcpy((char *)vec->vector + vec->active_length * vec->num_bytes,
+			elements, num_indices * vec->num_bytes);
+	vec->active_length += num_indices;
+	return 1;
+}
 // ================================================================================
 // ================================================================================
 // eof
+//
+//
+//
+// TODO 1st function: free_vector free vector function; free memory in array and struct
+// TODO 2nd function: pop: delete indice of choice

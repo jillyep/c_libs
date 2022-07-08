@@ -113,6 +113,9 @@ Vector init_vector(size_t num_bytes, size_t num_indices);
  */
 Vector init_type_vector(dtype dat_type, size_t num_indices);
 
+//--------------------------------------------------------------------------------
+
+int push_vector(Vector *vec, void *elements, size_t num_indices);
 
 #endif /* vector_H */
 // ================================================================================
