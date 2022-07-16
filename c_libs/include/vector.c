@@ -113,6 +113,17 @@ void free_vector(Vector *vec){
 	vec->num_bytes = 0;
 }
 
+
+// -------------------------------------------------------------------------------- 
+
+int pop_vector(Vector *vec, int pop_indice){
+	memmove((char *)vec->vector + (vec->num_bytes * pop_indice),
+			vec->vector + (vec->num_bytes * pop_indice) + vec->num_bytes,
+			(vec->active_length - pop_indice) * vec->num_bytes);
+	vec->active_length -= 1;
+	return 1;
+
+}
 // ================================================================================
 // ================================================================================
 // eof

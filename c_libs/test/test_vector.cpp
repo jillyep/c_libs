@@ -92,7 +92,18 @@ TEST(test_free_vector, free_vec){
 	EXPECT_EQ(vec.num_bytes, 0);
 }
 
+// -------------------------------------------------------------------------------- 
 
+TEST(pop_vector, pop_vec){
+	int a[] = {1, 2, 3};
+	int length = 3;
+	Vector vec = init_type_vector(INT, length);
+	push_vector(&vec, a, length);
+	pop_vector(&vec, 2);
+	for (size_t i = 0; i < vec.active_length; i++){
+		EXPECT_EQ(a[i], ((int *) vec.vector)[i]);
+	}
+}
 
 
 	// eof

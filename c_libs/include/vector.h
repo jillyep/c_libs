@@ -118,7 +118,7 @@ Vector init_type_vector(dtype dat_type, size_t num_indices);
 
 /**
  * Pushes array or scalar data to a Vector. User must first instantiate a vector
- * using the init_vector or init_type_vector functions. Then they can push data by inputting the  pointer to the instantiated vector, a pointer to the array or scalar to be pushed to the vector, and the number of indices of the array or scalar to be pushed to the vector. 
+ * using the ``init_vector`` or ``init_type_vector`` functions. Then they can push data by inputting the  pointer to the instantiated vector, a pointer to the array or scalar to be pushed to the vector, and the number of indices of the array or scalar to be pushed to the vector. 
  *
  * @param *vec a pointer to the vector that was previously instantiated using the 
  * init_type_vector or init_vector functions.
@@ -161,6 +161,26 @@ int push_vector(Vector *vec, void *elements, size_t num_indices);
 
 
 void free_vector(Vector *vec);
+
+// -------------------------------------------------------------------------------- 
+
+/* This function pops a user-inputted indice off of a vector. This function assumes t
+ * at the user already instantiated a vector and pushed data to it. The user must 
+ * input the pointer to the vector array and specify the number of indice which they
+ * wish to delete. 
+ *
+ * @param *vec Pointer to the vector
+ * @param pop_indice integer number for indice that the user wishes to delete
+ * from the vector.
+ * 
+ * @return 1
+ *
+ * @code
+ * pop_vector(&vec, 2);
+ * @endcode
+ */
+
+int pop_vector(Vector *vec, int pop_indice);
 
 #endif /* vector_H */
 // ================================================================================

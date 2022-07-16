@@ -116,4 +116,23 @@ address to the vector.
    // Freeing vector in heap memory
    free_vector(&vec);
 
+**********
+pop_vector
+**********
+This function pops a user-specified indice off of the vector. The user must input the pointer to 
+the vector and specify the indice that they wish to pop off of the vector. 
+
+.. code-block:: c
+   
+    // Instantiating a vector 
+    Vector vec = init_type_vector(INT, 10);
+
+
+    // Pushing array of integers to the vector
+    int b[] = {4, 5, 6};
+    array_length = 3;
+    push(&vec, &b, array_length);
+
+    // Popping indice 2 off of vector
+    pop_vector(&vec, 2);
 
