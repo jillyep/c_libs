@@ -112,6 +112,8 @@ This function frees the heap memory that was previously assigned to the vector. 
 address to the vector. 
 
 .. code-block:: c
+
+   // Freeing vector in heap memory
    free_vector(&vec);
 
 
