@@ -102,6 +102,17 @@ int push_vector(Vector *vec, void *elements, size_t num_indices){
 	vec->active_length += num_indices;
 	return 1;
 }
+
+// -------------------------------------------------------------------------------- 
+
+void free_vector(Vector *vec){
+	free(vec->vector);
+	vec->vector = NULL;
+	vec->active_length = 0;
+	vec->allocated_length = 0;
+	vec->num_bytes = 0;
+}
+
 // ================================================================================
 // ================================================================================
 // eof

@@ -58,7 +58,7 @@ TEST(test_push_vector, push_array) {
 	int a[] = {1, 2, 3};
 	int length = 3;
 	Vector vec = init_type_vector(INT, length);
-	push_vector(&vec, &a, length);
+	push_vector(&vec, a, length);
 	for (size_t i = 0; i < vec.active_length; i++){
 		EXPECT_EQ(a[i], ((int *) vec.vector)[i]);
 	}
@@ -78,6 +78,21 @@ TEST(test_push_vector, push_scalar){
 	EXPECT_EQ(((int *) vec.vector)[0], a);
 }
 
-// ================================================================================
-// ================================================================================
-// eof
+// -------------------------------------------------------------------------------- 
+
+TEST(test_free_vector, free_vec){
+	int a[] = {1, 2, 3};
+	int length = 3;
+	Vector vec = init_type_vector(INT, length);
+	push_vector(&vec, a, length);
+	free_vector(&vec);
+	EXPECT_EQ(vec.allocated_length, 0);
+	EXPECT_EQ(vec.active_length, 0);
+	EXPECT_TRUE(vec.vector == NULL);
+	EXPECT_EQ(vec.num_bytes, 0);
+}
+
+
+
+
+	// eof

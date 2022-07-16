@@ -105,5 +105,13 @@ data type is automatically used for the ``init_type_vector`` function.
     array_length = 3;
     push(&vec, &b, array_length);
 
+***********
+free_vector
+***********
+This function frees the heap memory that was previously assigned to the vector. The user inputs the 
+address to the vector. 
+
+.. code-block:: c
+   free_vector(&vec);
 
 

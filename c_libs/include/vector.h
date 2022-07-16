@@ -141,6 +141,27 @@ Vector init_type_vector(dtype dat_type, size_t num_indices);
  */
 int push_vector(Vector *vec, void *elements, size_t num_indices);
 
+// -------------------------------------------------------------------------------- 
+
+
+/* This function frees the struct data located in heap memory. 
+ *
+ *@param *vec a pointer to a vector that is to be freed in heap memory.
+
+ * @code
+ * a[] = {1, 2, 3};
+ * length = 3;
+ * // Instantiate a vector
+ * Vector vec = init_type_vector(INT, 5);
+ * // push array a onto vec
+ * push_vector(&vec, &a, length);
+ * free_vector(&vec);
+ * @endcode
+ */
+
+
+void free_vector(Vector *vec);
+
 #endif /* vector_H */
 // ================================================================================
 // ================================================================================
