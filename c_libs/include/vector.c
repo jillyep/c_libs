@@ -14,92 +14,92 @@
 
 #include "vector.h"
 
-Vector init_vector(size_t num_bytes, size_t num_indices) {
-	// 1. Instantiate the Vector struct.
-	// 2. Assign dtype of NONE
-	// 3. Determine how much memory to allocate. If there's not enough
-	//	  memory, notify the user.
-	// 4. Assign memory to vector.
-	// 5. Assign active length and allocated length.
+Vector init_vector(size_t allocated_length, size_t num_bytes_per_indice) {
 	Vector vec;
 	void *pointer;
-	pointer = malloc(num_indices * num_bytes);
+	pointer = malloc(allocated_length * num_bytes_per_indice);
 	if (pointer == NULL){
 		printf("Unable to allocate memory. Exiting.\n");
-		free(vec.vector);
+		free(pointer);
 		exit(0);
 	}
 	vec.dat_type = NONE;
+	vec.num_bytes = num_bytes_per_indice;
 	vec.active_length = 0;
-	vec.num_bytes = num_bytes;
-	vec.allocated_length = num_indices;
+	vec.allocated_length = allocated_length;
 	vec.vector = pointer;
 	return vec;
 }
 
 // --------------------------------------------------------------------------------
 
-Vector init_type_vector(dtype dat_type, size_t num_indices) {
+Vector init_type_vector(dtype dat_type, size_t allocated_length) {
 	Vector vec;
-	void *pointer;
-	size_t num_bytes;
-	if(dat_type == FLOAT) num_bytes = sizeof(float);
-	else if (dat_type == DOUBLE) num_bytes = sizeof(double);
-	else if (dat_type == CHAR) num_bytes = sizeof(char);
-	else if (dat_type == INT) num_bytes = sizeof(int);
-	else if (dat_type == SHORTINT) num_bytes = sizeof(short int);
-	else if (dat_type == LONG) num_bytes = sizeof(long);
-	else if (dat_type == LONGLONG) num_bytes = sizeof(long long);
-	else {
-		printf("You entered an invalid data type.Instantiating memory allocation to sizeof(int)\n");
-		num_bytes = sizeof(int);
+	if(dat_type == FLOAT) {
+		vec.num_bytes = sizeof(float);
+		vec.dat_type = dat_type;
 	}
-	pointer = malloc(num_indices * num_bytes);
+	else if (dat_type == DOUBLE) {
+		vec.num_bytes = sizeof(double);
+		vec.dat_type = dat_type;
+	}
+	else if (dat_type == CHAR) {
+		vec.num_bytes = sizeof(char);
+		vec.dat_type = dat_type;
+	}
+	else if (dat_type == INT) {
+		vec.num_bytes = sizeof(int);
+		vec.dat_type = dat_type;
+	}
+	else if (dat_type == SHORTINT) {
+		vec.num_bytes = sizeof(short int);
+		vec.dat_type = dat_type;
+	}
+	else if (dat_type == LONG) {
+		vec.num_bytes = sizeof(long);
+		vec.dat_type = dat_type;
+	}
+	else if (dat_type == LONGLONG) {
+		vec.num_bytes = sizeof(long long);
+		vec.dat_type = dat_type;
+	}
+	else {
+		printf("You entered an invalid data type. Instantiating memory allocation to sizeof(int)\n");
+		vec.num_bytes = sizeof(int);
+		vec.dat_type = INT;
+	}
+	void *pointer = malloc(allocated_length * vec.num_bytes);
 	if (pointer == NULL){
 		printf("Unable to allocate memory. Exiting.\n");
-		free(vec.vector);
+		free(pointer);
+		vec.num_bytes = 0;
+		vec.dat_type = 0;
 		exit(0);
 	}
-	vec.dat_type = dat_type;
 	vec.active_length = 0;
-	vec.num_bytes = num_bytes;
-	vec.allocated_length = num_indices;
+	vec.allocated_length = allocated_length;
 	vec.vector = pointer;
 	return vec;
 }
 
 // -------------------------------------------------------------------------------- 
 
-// Prototype
-// Write function in .c file
-// Write test
-// Run test
-// doc strings
-// update readme.rst
-// add to git
 
-
-int push_vector(Vector *vec, void *elements, size_t num_indices){
-//1. active length + num_indices, compare to allocated length
-//2. if  active > allocated, realloc memory active length * 2
-//3. see if vector exceeds memory available (NULL)
-//4. assign extra memory to vec.vector
-//5. memcopy the new elements into the vector
-//6. Update meta data. allocated memory, active length += num_indices,
-	size_t dat_size = vec->active_length + num_indices;
-	size_t new_size = vec->active_length * 2;
-	if (vec->allocated_length < dat_size){
-		void *ptr = realloc(vec->vector, new_size * vec->num_bytes);
+int push_vector(Vector *vec, void *elements, size_t push_length) {
+	if (vec->allocated_length < vec->active_length + push_length) {
+		size_t new_size = (vec->allocated_length + push_length) * vec->num_bytes * 2;
+		void *ptr = realloc(vec->vector, new_size);
 		if (ptr == NULL){
 			printf("Exceeded memory available. Exiting program.\n");
+			free(ptr);
 			return 0;
 		}
 		vec->allocated_length = new_size;
 		vec->vector = ptr;
 	}
-	memcpy((char *)vec->vector + vec->active_length * vec->num_bytes,
-			elements, num_indices * vec->num_bytes);
-	vec->active_length += num_indices;
+	memcpy(((char *)vec->vector) + vec->active_length * vec->num_bytes,
+			elements, push_length * vec->num_bytes);
+	vec->active_length += push_length;
 	return 1;
 }
 
@@ -107,28 +107,66 @@ int push_vector(Vector *vec, void *elements, size_t num_indices){
 
 void free_vector(Vector *vec){
 	free(vec->vector);
-	vec->vector = NULL;
 	vec->active_length = 0;
 	vec->allocated_length = 0;
 	vec->num_bytes = 0;
+	vec->dat_type = 0;
+	vec->vector = NULL;
 }
 
 
-// -------------------------------------------------------------------------------- 
+// --------------------------------------------------------------------------------
 
-int pop_vector(Vector *vec, int pop_indice){
-	memmove((char *)vec->vector + (vec->num_bytes * pop_indice),
-			vec->vector + (vec->num_bytes * pop_indice) + vec->num_bytes,
+void pop_vector(Vector *vec, int pop_indice){
+	memmove(((char *)vec->vector) + (vec->num_bytes * pop_indice),
+			((char *) vec->vector) + (pop_indice + 1) * vec->num_bytes,
 			(vec->active_length - pop_indice) * vec->num_bytes);
 	vec->active_length -= 1;
-	return 1;
+}
 
+// --------------------------------------------------------------------------------
+
+int insert_vector(Vector *vec, void *elements, size_t insert_length, size_t insert_indice) {
+	if (vec->allocated_length < vec->active_length + insert_length) {
+		size_t new_size = (vec->active_length + insert_length) * vec->num_bytes * 2;
+		void *ptr = realloc(vec->vector, new_size);
+		if (ptr == NULL) {
+			printf("Not enough memory available.\n");
+			free(ptr);
+			return 0;
+		}
+		vec->vector = ptr;
+		vec->allocated_length = new_size;
+	}
+	memmove(((char *) vec->vector) + (insert_indice + insert_length) * vec->num_bytes,
+			((char *) vec->vector) + (insert_indice * vec->num_bytes),
+			(vec->active_length - insert_indice) * vec->num_bytes);
+	memcpy(((char *) vec->vector) + (insert_indice * vec->num_bytes), elements,
+				insert_length * vec->num_bytes);
+	vec->active_length += insert_length;
+	return 1;
+}
+
+// --------------------------------------------------------------------------------
+
+
+void delete_vector_value(Vector *vec, void *delete_value) {
+	for (int i = 0; i < vec->active_length; i++){
+		int result = memcmp(((char *)vec->vector) + (i * vec->num_bytes),
+				((char *)delete_value), vec->num_bytes);
+		if (result == 0) {
+			pop_vector(vec, i);
+			i -= 1;
+		}
+	}
+}
+
+// -------------------------------------------------------------------------------- 
+
+void replace_index_vector(Vector *vec, size_t index, void *replace_value, size_t replace_length) {
+	pop_vector(vec, index);
+	insert_vector(vec, replace_value, replace_length, index);
 }
 // ================================================================================
 // ================================================================================
 // eof
-//
-//
-//
-// TODO 1st function: free_vector free vector function; free memory in array and struct
-// TODO 2nd function: pop: delete indice of choice

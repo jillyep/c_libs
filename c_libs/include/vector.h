@@ -61,9 +61,9 @@ typedef enum
  * @param Vector::allocated_length
  *    The total number of allocated indices in memory
  * @param Vector::num_bytes
- *    The number of bytes consumed by a single indices
+ *    The number of bytes consumed by a single indice
  * @param Vector::dat_type
- *    The data type.  Must use data types allodated in dtype enum
+ *    The data type.  Must use data types allocated in dtype enum
  */
 typedef struct
 {
@@ -118,9 +118,9 @@ Vector init_type_vector(dtype dat_type, size_t num_indices);
 
 /**
  * Pushes array or scalar data to a Vector. User must first instantiate a vector
- * using the ``init_vector`` or ``init_type_vector`` functions. Then they can push data by inputting the  pointer to the instantiated vector, a pointer to the array or scalar to be pushed to the vector, and the number of indices of the array or scalar to be pushed to the vector. 
+ * using the ``init_vector`` or ``init_type_vector`` functions. Then they can push data by inputting the  pointer to the instantiated vector, a pointer to the array or scalar to be pushed to the vector, and the number of indices of the array or scalar to be pushed to the vector.
  *
- * @param *vec a pointer to the vector that was previously instantiated using the 
+ * @param *vec a pointer to the vector that was previously instantiated using the
  * init_type_vector or init_vector functions.
  * @param *elements array or scalar values to be pushed to the vector
  * @param num_indices the number of indices contained in elements
@@ -141,10 +141,10 @@ Vector init_type_vector(dtype dat_type, size_t num_indices);
  */
 int push_vector(Vector *vec, void *elements, size_t num_indices);
 
-// -------------------------------------------------------------------------------- 
+// --------------------------------------------------------------------------------
 
 
-/* This function frees the struct data located in heap memory. 
+/** This function frees the struct data located in heap memory.
  *
  *@param *vec a pointer to a vector that is to be freed in heap memory.
 
@@ -162,17 +162,17 @@ int push_vector(Vector *vec, void *elements, size_t num_indices);
 
 void free_vector(Vector *vec);
 
-// -------------------------------------------------------------------------------- 
+// --------------------------------------------------------------------------------
 
-/* This function pops a user-inputted indice off of a vector. This function assumes t
- * at the user already instantiated a vector and pushed data to it. The user must 
+/** This function pops a user-inputted indice off of a vector. This function assumes t
+ * at the user already instantiated a vector and pushed data to it. The user must
  * input the pointer to the vector array and specify the number of indice which they
- * wish to delete. 
+ * wish to delete.
  *
  * @param *vec Pointer to the vector
  * @param pop_indice integer number for indice that the user wishes to delete
  * from the vector.
- * 
+ *
  * @return 1
  *
  * @code
@@ -180,8 +180,21 @@ void free_vector(Vector *vec);
  * @endcode
  */
 
-int pop_vector(Vector *vec, int pop_indice);
+void pop_vector(Vector *vec, int pop_indice);
 
+// --------------------------------------------------------------------------------
+
+int insert_vector(Vector *vec, void *elements, size_t insert_length, size_t insert_indice);
+
+
+// --------------------------------------------------------------------------------
+
+void delete_vector_value(Vector *vec, void *delete_value);
+
+// --------------------------------------------------------------------------------
+
+void replace_index_vector(Vector *vec, size_t index, void *replace_value, size_t replace_length);
+// --------------------------------------------------------------------------------
 #endif /* vector_H */
 // ================================================================================
 // ================================================================================

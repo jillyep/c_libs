@@ -26,7 +26,7 @@ extern "C" {
 TEST(init_vector, test_one) {
 	size_t size = sizeof(int);
 	size_t length = 5;
-	Vector vec = init_vector(size, length);
+	Vector vec = init_vector(length, size);
 	EXPECT_EQ(vec.num_bytes, size);
 	EXPECT_EQ(vec.allocated_length, length);
 	EXPECT_EQ(vec.active_length, 0);
@@ -88,8 +88,8 @@ TEST(test_free_vector, free_vec){
 	free_vector(&vec);
 	EXPECT_EQ(vec.allocated_length, 0);
 	EXPECT_EQ(vec.active_length, 0);
-	EXPECT_TRUE(vec.vector == NULL);
 	EXPECT_EQ(vec.num_bytes, 0);
+	EXPECT_TRUE(vec.vector == NULL);
 }
 
 // -------------------------------------------------------------------------------- 
@@ -105,5 +105,49 @@ TEST(pop_vector, pop_vec){
 	}
 }
 
+// -------------------------------------------------------------------------------- 
 
+TEST (insert_vector, insert_vec) {
+	int a[] = {1, 2, 3};
+	int b[] = {4, 5, 6};
+	size_t length = 3;
+	size_t insert_indice = 2;
+	Vector vec = init_type_vector(INT, length);
+	push_vector(&vec, a, length);
+	insert_vector(&vec, b, length, insert_indice);
+	//for (int i = 0; i < vec.active_length; i++) {
+	//	printf("%d\n", ((int *)vec.vector)[i]);
+//	}
+}
+
+// -------------------------------------------------------------------------------- 
+
+TEST (delete_vector_value, del_vec) {
+	int a[] = {1, 2, 3, 3, 4, 5, 6, 7, 2};
+	int del_value = 3;
+	size_t length = 9;
+	Vector vec = init_type_vector(INT, length);
+	push_vector(&vec, a, length);
+	delete_vector_value(&vec, &del_value);
+//	for (int i = 0; i < vec.active_length; i++) {
+	//	printf("%d\n", ((int *)vec.vector)[i]);
+//	}
+}
+
+// -------------------------------------------------------------------------------- 
+
+
+TEST (replace_index_vector, replace_vec) {
+	int a[] = {1, 2, 3, 4};
+	int rep_value = 8;
+	size_t rep_length = 1;
+	size_t length = 4;
+	size_t index = 2;
+	Vector vec = init_type_vector(INT, length);
+	push_vector(&vec, a, length);
+	replace_index_vector(&vec, index, &rep_value, rep_length);
+	for (int i = 0; i < vec.active_length; i++) {
+		printf("%d\n", ((int *)vec.vector)[i]);
+	}
+}
 	// eof
