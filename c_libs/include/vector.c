@@ -167,6 +167,34 @@ void replace_index_vector(Vector *vec, size_t index, void *replace_value, size_t
 	pop_vector(vec, index);
 	insert_vector(vec, replace_value, replace_length, index);
 }
+
+// --------------------------------------------------------------------------------
+
+void replace_vector_value(Vector *vec, void *delete_value, void *replace_value, size_t replace_length) {
+	for (int i = 0; i < vec->active_length; i++) {
+		int result = memcmp(((char *)vec->vector) + (i * vec->num_bytes),
+				((char *)delete_value), vec->num_bytes);
+		if (result == 0) {
+			replace_index_vector(vec, i, replace_value, replace_length);
+		}
+	}
+}
+
+// --------------------------------------------------------------------------------
+
+void delete_vector_duplicates(Vector *vec) {
+	for (int i = 0; i < vec->active_length - 1; i++) {
+		for (int j = i + 1; j < vec->active_length; j++) {
+			int result = memcmp(((char *)vec->vector) + (i * vec->num_bytes),
+					((char *)vec->vector) + (j * vec->num_bytes),
+					vec->num_bytes);
+			if (result == 0) {
+				pop_vector(vec, j);
+			}
+		}
+	}
+}
+
 // ================================================================================
 // ================================================================================
 // eof

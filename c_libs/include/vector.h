@@ -195,6 +195,13 @@ void delete_vector_value(Vector *vec, void *delete_value);
 
 void replace_index_vector(Vector *vec, size_t index, void *replace_value, size_t replace_length);
 // --------------------------------------------------------------------------------
+
+
+void replace_vector_value(Vector *vec, void *delete_value, void *replace_value, size_t replace_length);
+
+void delete_vector_duplicates(Vector *vec);
+
+
 #endif /* vector_H */
 // ================================================================================
 // ================================================================================

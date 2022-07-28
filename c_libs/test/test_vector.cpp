@@ -146,8 +146,46 @@ TEST (replace_index_vector, replace_vec) {
 	Vector vec = init_type_vector(INT, length);
 	push_vector(&vec, a, length);
 	replace_index_vector(&vec, index, &rep_value, rep_length);
+//	for (int i = 0; i < vec.active_length; i++) {
+		//printf("%d\n", ((int *)vec.vector)[i]);
+//	}
+}
+
+// -------------------------------------------------------------------------------- 
+
+
+TEST (replace_vector_value, replace_vec) {
+	int a[] = {1, 2, 3, 4};
+	int rep_value = 8;
+	size_t rep_length = 1;
+	size_t del_value = 4;
+	size_t length = 4;
+	Vector vec = init_type_vector(INT, length);
+	push_vector(&vec, a, length);
+	replace_vector_value(&vec, &del_value, &rep_value, rep_length);
+//	for (int i = 0; i < vec.active_length; i++) {
+	//	printf("%d\n", ((int *)vec.vector)[i]);
+//	}
+}
+
+// -------------------------------------------------------------------------------- 
+
+
+TEST (delete_vector_duplicates, del_dup) {
+	int a[] = {1, 3, 2, 4, 4, 2, 6, 1};
+	size_t length = 8;
+	Vector vec = init_type_vector(INT, length);
+	push_vector(&vec, a, length);
+	delete_vector_duplicates(&vec);
 	for (int i = 0; i < vec.active_length; i++) {
 		printf("%d\n", ((int *)vec.vector)[i]);
 	}
 }
+
+
+// -------------------------------------------------------------------------------- 
+
+
+
+
 	// eof
