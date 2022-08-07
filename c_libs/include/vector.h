@@ -19,6 +19,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <math.h>
 
 /**
  * @brief A Container for the data type of the elements of the struct Vector
@@ -199,8 +200,50 @@ void replace_index_vector(Vector *vec, size_t index, void *replace_value, size_t
 
 void replace_vector_value(Vector *vec, void *delete_value, void *replace_value, size_t replace_length);
 
+// --------------------------------------------------------------------------------
+
+
 void delete_vector_duplicates(Vector *vec);
 
+// --------------------------------------------------------------------------------
+
+
+void unique_vector_values(Vector *vec);
+
+// --------------------------------------------------------------------------------
+
+
+typedef enum {
+	ASCENDING,
+	DESCENDING
+} order;
+
+int sort_vector(Vector *vec, order order_type);
+
+// --------------------------------------------------------------------------------
+
+void reverse_vector(Vector *vec);
+
+// --------------------------------------------------------------------------------
+
+float median_vector(Vector *vec);
+
+// --------------------------------------------------------------------------------
+
+int sum_vector(Vector *vec);
+
+// --------------------------------------------------------------------------------
+
+float average_vector(Vector *vec);
+
+// --------------------------------------------------------------------------------
+
+
+float stdev_vector(Vector *vec);
+
+// --------------------------------------------------------------------------------
+
+Vector cumsum_vector(Vector *vec);
 
 #endif /* vector_H */
 // ================================================================================

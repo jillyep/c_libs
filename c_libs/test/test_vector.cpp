@@ -177,15 +177,130 @@ TEST (delete_vector_duplicates, del_dup) {
 	Vector vec = init_type_vector(INT, length);
 	push_vector(&vec, a, length);
 	delete_vector_duplicates(&vec);
+//	for (int i = 0; i < vec.active_length; i++) {
+//		printf("%d\n", ((int *)vec.vector)[i]);
+//	}
+}
+
+// -------------------------------------------------------------------------------- 
+
+
+TEST (unique_vector_values, unique_val) {
+	int a[] = {1, 3, 2, 4, 4, 2, 6, 1};
+	size_t length = 8;
+	Vector vec = init_type_vector(INT, length);
+	push_vector(&vec, a, length);
+	unique_vector_values(&vec);
+//	for (int i = 0; i < vec.active_length; i++) {
+	//	printf("%d\n", ((int *)vec.vector)[i]);
+//	}
+}
+
+// -------------------------------------------------------------------------------- 
+
+TEST (sort_vector, sort_ascending) {
+	int a[] = {1, 3, 5, 2, 7, 6};
+	size_t length = 6;
+	Vector vec = init_type_vector(INT, length);
+	push_vector(&vec, a, length);
+	sort_vector(&vec, ASCENDING);
+//	for (int i = 0; i < vec.active_length; i++) {
+//		printf("%d\n", ((int *)vec.vector)[i]);
+//	}
+}
+
+// -------------------------------------------------------------------------------- 
+
+
+TEST (sort_vector, sort_descending) {
+	int a[] = {1, 3, 5, 2, 7, 6};
+	size_t length = 6;
+	Vector vec = init_type_vector(INT, length);
+	push_vector(&vec, a, length);
+	sort_vector(&vec, DESCENDING);
 	for (int i = 0; i < vec.active_length; i++) {
 		printf("%d\n", ((int *)vec.vector)[i]);
 	}
 }
 
-
 // -------------------------------------------------------------------------------- 
 
 
+TEST (reverse_vector, rev) {
+	int a[] = {1, 3, 5, 2, 7, 6};
+	size_t length = 6;
+	Vector vec = init_type_vector(INT, length);
+	push_vector(&vec, a, length);
+	reverse_vector(&vec);
+	for (int i = 0; i < vec.active_length; i++) {
+		printf("%d\n", ((int *)vec.vector)[i]);
+	}
+}
+
+// --------------------------------------------------------------------------------
 
 
+TEST (median_vector, med) {
+	int a[] = {1, 3, 5, 2, 7, 8};
+	size_t length = 6;
+	Vector vec = init_type_vector(INT, length);
+	push_vector(&vec, a, length);
+	float median = median_vector(&vec);
+//	printf("%f\n", median);
+	//for (int i = 0; i < vec.active_length; i++) {
+	//	printf("%d\n", ((int *)vec.vector)[i]);
+	//}
+}
+
+// --------------------------------------------------------------------------------
+
+TEST(sum_vector, sum) {
+	int a[] = {1, 3, 5, 2, 7, 8};
+	size_t length = 6;
+	Vector vec = init_type_vector(INT, length);
+	push_vector(&vec, a, length);
+	int sum = sum_vector(&vec);
+	printf("%d\n", sum);
+	//for (int i = 0; i < vec.active_length; i++) {
+	//	printf("%d\n", ((int *)vec.vector)[i]);
+
+}
+
+// --------------------------------------------------------------------------------
+
+TEST(average_vector, avg) {
+	int a[] = {1, 3, 5, 2, 7, 8};
+	size_t length = 6;
+	Vector vec = init_type_vector(INT, length);
+	push_vector(&vec, a, length);
+	float avg = average_vector(&vec);
+//	printf("%f\n", avg);
+
+}
+
+// --------------------------------------------------------------------------------
+
+
+TEST(stdev_vector, stdev) {
+	int a[] = {1, 3, 5, 2, 7, 8};
+	size_t length = 6;
+	Vector vec = init_type_vector(INT, length);
+	push_vector(&vec, a, length);
+	float stdev = stdev_vector(&vec);
+//	printf("%f\n", stdev);
+}
+
+// --------------------------------------------------------------------------------
+
+
+TEST(cumsum_vector, stdev) {
+	int a[] = {1, 3, 5, 2, 7, 8};
+	size_t length = 6;
+	Vector vec = init_type_vector(INT, length);
+	push_vector(&vec, a, length);
+	Vector vectorisimo = cumsum_vector(&vec);
+	for (int i = 0; i < vectorisimo.active_length; i++) {
+		printf("%d\n", ((int *)vectorisimo.vector)[i]);
+	}
+}
 	// eof
